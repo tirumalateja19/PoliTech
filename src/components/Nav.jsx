@@ -2,9 +2,9 @@ import { Menu } from "lucide-react";
 import PoliTech_bg from "../assets/PoliTech_bg.png";
 
 const Nav = () => {
-  // const contactEmail = "info@politechsolutions.com";
-  const contactLink =
-    "https://mail.google.com/mail/?view=cm&fs=1&to=info@politechsolutions.com";
+  const contactEmail = "info@politechsolutions.com";
+  // const contactLink =
+  //   "https://mail.google.com/mail/?view=cm&fs=1&to=info@politechsolutions.com";
 
   return (
     <nav className="w-full sticky top-0 z-50 backdrop-blur-md shadow-md">
@@ -54,9 +54,7 @@ const Nav = () => {
             </a>
 
             <a
-              href={contactLink}
-              target="_blank"
-              rel="noopener noreferrer"
+              href={`mailto:${contactEmail}`}
               className="bg-[#F28C00] hover:bg-orange-500 text-white px-5 py-2 rounded-xl transition duration-300 inline-block"
             >
               Contact Us
@@ -78,23 +76,36 @@ const Nav = () => {
               className="dropdown-content menu bg-[#041E54] rounded-2xl z-100 w-56 p-4 shadow-xl mt-4 right-0 text-white"
             >
               <li>
-                <a className="hover:text-[#F28C00]">Home</a>
+                <a
+                  className="hover:text-[#F28C00] transition duration-300 cursor-pointer"
+                  href="#hero"
+                >
+                  Home
+                </a>
               </li>
               <li>
-                <a className="hover:text-[#F28C00]">About Us</a>
+                <a
+                  className="hover:text-[#F28C00] transition duration-300 cursor-pointer"
+                  href="#footer"
+                >
+                  About Us
+                </a>
               </li>
               <li>
-                <a className="hover:text-[#F28C00]">Services</a>
+                <a
+                  className="hover:text-[#F28C00] transition duration-300 cursor-pointer"
+                  href="#services"
+                >
+                  Services
+                </a>
               </li>
-              <li>
+              {/* <li>
                 <a className="hover:text-[#F28C00]">Strategies</a>
-              </li>
+              </li> */}
 
               <li className="mt-3">
                 <a
-                  href={contactLink}
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  href={`mailto:${contactEmail}`}
                   className="bg-[#F28C00] hover:bg-orange-500 text-white py-2 rounded-xl text-center"
                 >
                   Contact Us
