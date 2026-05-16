@@ -48,11 +48,9 @@ const Hero = () => {
             <div className="absolute inset-0 bg-primary/20 blur-3xl rounded-full "></div>
 
             <div className="hover-3d">
-              {/* content */}
               <figure className="max-w-100 rounded-2xl">
                 <img src={img} alt="3D card" className="shadow-2xl" />
               </figure>
-              {/* 8 empty divs needed for the 3D effect */}
               <div></div>
               <div></div>
               <div></div>

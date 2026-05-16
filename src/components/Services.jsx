@@ -28,7 +28,6 @@ const services = [
 const Services = () => {
   return (
     <section className="bg-white py-12 px-6 lg:px-16" id="services">
-      {/* HEADING */}
       <div className="text-center mb-10">
         <h1 className="text-4xl lg:text-5xl font-bold text-[#041E54]">
           Our Services
@@ -39,7 +38,6 @@ const Services = () => {
         </p>
       </div>
 
-      {/* CARDS */}
       <div className="flex flex-wrap justify-center gap-6">
         {services.map((service, index) => (
           <div

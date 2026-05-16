@@ -4,9 +4,7 @@ const Footer = () => {
       className="bg-white text-black px-6 lg:px-16 pt-14 pb-6 border-t border-gray-200"
       id="footer"
     >
-      {/* TOP SECTION */}
       <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-3 gap-12 pb-10">
-        {/* BRAND */}
         <div>
           <h1 className="text-3xl font-bold">
             <span className="text-[#041E54]">Poli</span>
@@ -91,7 +89,6 @@ const Footer = () => {
         </div>
       </div>
 
-      {/* BOTTOM BAR */}
       <div className="max-w-7xl mx-auto border-t border-gray-200 pt-5 flex flex-col lg:flex-row justify-between items-center gap-3 text-sm text-gray-500">
         <p>© 2026 PoliTech Solutions. All rights reserved.</p>
 

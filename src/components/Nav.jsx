@@ -1,18 +1,20 @@
 import { Menu } from "lucide-react";
-import PoliTech_bg from "../assets/PoliTech_bg.png"
+import PoliTech_bg from "../assets/PoliTech_bg.png";
+
 const Nav = () => {
+  // const contactEmail = "info@politechsolutions.com";
+  const contactLink =
+    "https://mail.google.com/mail/?view=cm&fs=1&to=info@politechsolutions.com";
+
   return (
     <nav className="w-full sticky top-0 z-50 backdrop-blur-md shadow-md">
       <div className="max-w-7xl mx-auto px-6 lg:px-10">
         <div className="flex items-center justify-between h-20">
-          {/* LOGO */}
           <div className="mt-2">
             <div className="hover-3d cursor-pointer ">
-              {/* content */}
               <figure>
                 <img src={PoliTech_bg} alt="3D card" className="w-22 h-16 " />
               </figure>
-              {/* 8 empty divs needed for the 3D effect */}
               <div></div>
               <div></div>
               <div></div>
@@ -32,21 +34,18 @@ const Nav = () => {
             >
               Home
             </a>
-
             <a
               className="hover:text-[#F28C00] transition duration-300 cursor-pointer"
               href="#footer"
             >
               About Us
             </a>
-
             <a
               className="hover:text-[#F28C00] transition duration-300 cursor-pointer"
               href="#services"
             >
               Services
             </a>
-
             <a
               className="hover:text-[#F28C00] transition duration-300 cursor-pointer"
               href="#services"
@@ -54,10 +53,13 @@ const Nav = () => {
               Strategies
             </a>
 
-            <a href="#footer">
-              <button className="bg-[#F28C00] hover:bg-orange-500 text-white px-5 py-2 rounded-xl transition duration-300">
-                Contact Us
-              </button>
+            <a
+              href={contactLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-[#F28C00] hover:bg-orange-500 text-white px-5 py-2 rounded-xl transition duration-300 inline-block"
+            >
+              Contact Us
             </a>
           </div>
 
@@ -66,7 +68,7 @@ const Nav = () => {
             <div
               tabIndex={0}
               role="button"
-              className="cursor-pointer text-white"
+              className="cursor-pointer text-black"
             >
               <Menu size={30} />
             </div>
@@ -78,23 +80,25 @@ const Nav = () => {
               <li>
                 <a className="hover:text-[#F28C00]">Home</a>
               </li>
-
               <li>
                 <a className="hover:text-[#F28C00]">About Us</a>
               </li>
-
               <li>
                 <a className="hover:text-[#F28C00]">Services</a>
               </li>
-
               <li>
                 <a className="hover:text-[#F28C00]">Strategies</a>
               </li>
 
               <li className="mt-3">
-                <button className="bg-[#F28C00] hover:bg-orange-500 text-white py-2 rounded-xl w-full">
+                <a
+                  href={contactLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="bg-[#F28C00] hover:bg-orange-500 text-white py-2 rounded-xl text-center"
+                >
                   Contact Us
-                </button>
+                </a>
               </li>
             </ul>
           </div>
