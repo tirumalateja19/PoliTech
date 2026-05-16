@@ -1,7 +1,10 @@
+import Nav from "./components/Nav.jsx";
+import Hero from "./components/Hero.jsx";
 const App = () => {
   return (
-    <div>
-      <h1 className="text-3xl font-bold text-center">Hello World</h1>
+    <div className="verflow-x-hidden">
+      <Nav />
+      <Hero />
     </div>
   );
 };
