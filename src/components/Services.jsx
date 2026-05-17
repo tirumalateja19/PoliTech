@@ -29,11 +29,11 @@ const Services = () => {
   return (
     <section className="bg-white py-12 px-6 lg:px-16" id="services">
       <div className="text-center mb-10">
-        <h1 className="text-4xl lg:text-5xl font-bold text-[#041E54]">
+        <h1 className="text-4xl lg:text-5xl font-[font6] text-[#041E54]">
           Our Services
         </h1>
 
-        <p className="text-gray-500 mt-3 text-lg">
+        <p className="text-gray-500 mt-3 text-3xl font-[font1]">
           Strategic political consulting and campaign support solutions
         </p>
       </div>
@@ -45,11 +45,11 @@ const Services = () => {
             className="w-full sm:w-85 bg-gray-50 border border-gray-200 rounded-2xl shadow-md hover:shadow-xl hover:-translate-y-2 transition duration-300"
           >
             <div className="p-7 flex flex-col h-full">
-              <h2 className="text-2xl font-bold text-[#F28C00] mb-4">
+              <h2 className="text-2xl font-bold text-[#F28C00] mb-4 font-[font7] ">
                 {service.title}
               </h2>
 
-              <p className="text-gray-600 leading-relaxed grow">
+              <p className="text-gray-600 leading-relaxed grow font-[font3] text-xl ">
                 {service.desc}
               </p>
 

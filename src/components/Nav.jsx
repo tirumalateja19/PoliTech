@@ -10,24 +10,13 @@ const Nav = () => {
     <nav className="w-full sticky top-0 z-50 backdrop-blur-md shadow-md">
       <div className="max-w-7xl mx-auto px-6 lg:px-10">
         <div className="flex items-center justify-between h-20">
-          <div className="mt-2">
-            <div className="hover-3d cursor-pointer ">
-              <figure>
-                <img src={PoliTech_bg} alt="3D card" className="w-22 h-16 " />
-              </figure>
-              <div></div>
-              <div></div>
-              <div></div>
-              <div></div>
-              <div></div>
-              <div></div>
-              <div></div>
-              <div></div>
-            </div>
+          <div>
+            <img src={PoliTech_bg} alt="3D card" className="w-22 h-16 " />
           </div>
+          {/* <span> Political Strategy & Digital Campaign Consulting</span> */}
 
           {/* DESKTOP MENU */}
-          <div className="hidden lg:flex items-center gap-10 text-[#041E54]/95 font-medium">
+          <div className="hidden lg:flex items-center gap-10 text-[#041E54]/95 font-[font4]">
             <a
               className="hover:text-[#F28C00] transition duration-300 cursor-pointer"
               href="#hero"

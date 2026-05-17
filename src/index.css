@@ -6,3 +6,29 @@
 html {
     scroll-behavior: smooth;
 }
+@font-face {
+    font-family: font1;
+    src: url(./assets/fonts/Cardo-Italic.ttf);
+}
+@font-face {
+    font-family: font2;
+    src: url(./assets/fonts/Cardo-Bold.ttf);
+}
+@font-face {
+    font-family: font3;
+    src: url(./assets/fonts/Cardo-Regular.ttf);
+}
+@font-face {
+    font-family: font4;
+    src: url(./assets/fonts/BricolageGrotesque-VariableFont_opsz\,wdth\,wght.ttf);
+}
+@font-face {
+    font-family: font5;
+    src: url(./assets/fonts/BonaNovaSC-Bold.ttf);
+}@font-face {
+    font-family: font6;
+    src: url(./assets/fonts/BonaNovaSC-Italic.ttf);
+}@font-face {
+    font-family: font7;
+    src: url(./assets/fonts/BonaNovaSC-Regular.ttf);
+}
