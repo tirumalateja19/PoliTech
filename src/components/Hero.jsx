@@ -1,4 +1,5 @@
-import imgage from "../assets/image.png"
+import imgage from "../assets/image.png";
+import {ArrowRight} from "lucide-react"
 const Hero = () => {
   return (
     <section
@@ -7,9 +8,14 @@ const Hero = () => {
     >
       <div className="flex flex-col lg:flex-row items-center justify-between w-full lg:pl-12 gap-16">
         <div className="space-y-1 flex-1">
+          {/* <div className="inline-block px-4 py-2 mb-4 bg-[#F28C00] hover:bg-orange-500 transition duration-300 rounded-full">
+            <span className="text-sm font-semibold text-white">
+              Political Consulting Platform
+            </span>
+          </div> */}
           <div>
             <h1 className="text-4xl sm:text-5xl lg:text-7xl font-[font2] leading-tight text-[#041E54]/95">
-              We focus on
+              We Focus On
             </h1>
 
             <div className="h-24 mt-4 overflow-hidden">
@@ -36,10 +42,30 @@ const Hero = () => {
 
           <div className="flex gap-4">
             <a href="#services">
-              <button className="bg-[#F28C00] hover:bg-orange-500 transition duration-300 text-white px-6 py-3 rounded-xl font-semibold mt-8">
+              <button className="bg-[#F28C00] hover:bg-orange-500 transition duration-300 text-white px-6 py-3 rounded-xl font-semibold mt-8 flex items-center justify-center gap-2">
                 Explore Services
+                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </button>
             </a>
+          </div>
+          <div className="pt-10 space-y-3 font-[font2]">
+            <p className="text-lg text-slate-600 font-semibold">
+              Why Campaigns Trust Us
+            </p>
+            <ul className="space-y-2 text-sm">
+              <li className="flex items-center gap-3 text-slate-500">
+                <span className="w-2 h-2 bg-blue-500 rounded-full"></span>
+                Structured & Research-Based Approach
+              </li>
+              <li className="flex items-center gap-3 text-slate-500">
+                <span className="w-2 h-2 bg-blue-500 rounded-full"></span>
+                Customized Strategies for Every Campaign
+              </li>
+              <li className="flex items-center gap-3 text-slate-500">
+                <span className="w-2 h-2 bg-blue-500 rounded-full"></span>
+                Focus on Execution & Results
+              </li>
+            </ul>
           </div>
         </div>
 
