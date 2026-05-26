@@ -1,13 +1,28 @@
 import { Menu } from "lucide-react";
 import PoliTech_bg from "../assets/PoliTech_bg.png";
-
+import { useEffect, useRef } from "react";
+import gsap from "gsap";
 const Nav = () => {
   const contactEmail = "info@politechsolutions.com";
   // const contactLink =
   //   "https://mail.google.com/mail/?view=cm&fs=1&to=info@politechsolutions.com";
 
+  const navRef=useRef(null);
+  useEffect(()=>{
+    const ctx = gsap.context(() => {
+      gsap.from(navRef.current, {
+        opacity: 0,
+        y:-30,
+        duration: 1,
+        ease: "power2.inOut",
+      });
+    });
+
+    return () => ctx.revert();
+  },[])
+
   return (
-    <nav className="w-full sticky top-0 z-50 backdrop-blur-md shadow-md">
+    <nav ref={navRef} className="w-full sticky top-0 z-50 backdrop-blur-md shadow-md">
       <div className="max-w-7xl mx-auto px-6 lg:px-10">
         <div className="flex items-center justify-between h-20">
           <div>

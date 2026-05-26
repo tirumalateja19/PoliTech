@@ -1,6 +1,29 @@
-import imgage from "../assets/image.png";
-import {ArrowRight} from "lucide-react"
+import image from "../assets/image.png";
+import { ArrowRight } from "lucide-react";
+import gsap from "gsap";
+import { useRef, useEffect } from "react";
 const Hero = () => {
+  const titleRef = useRef(null);
+  const imageRef = useRef(null);
+  useEffect(() => {
+    const ctx = gsap.context(() => {
+      gsap.from(titleRef.current, {
+        opacity: 0,
+        x: -300,
+        duration: 1,
+        ease: "power3.out",
+      });
+      gsap.from(imageRef.current, {
+        opacity: 0,
+        scale: 0,
+        filter: "blur(10px)",
+        duration: 1.3,
+        ease: "expo.out",
+      });
+    });
+
+    return () => ctx.revert();
+  }, []);
   return (
     <section
       className="min-h-screen text-base-content px-8 lg:px-20 py-16 flex items-center"
@@ -8,13 +31,11 @@ const Hero = () => {
     >
       <div className="flex flex-col lg:flex-row items-center justify-between w-full lg:pl-12 gap-16">
         <div className="space-y-1 flex-1">
-          {/* <div className="inline-block px-4 py-2 mb-4 bg-[#F28C00] hover:bg-orange-500 transition duration-300 rounded-full">
-            <span className="text-sm font-semibold text-white">
-              Political Consulting Platform
-            </span>
-          </div> */}
           <div>
-            <h1 className="text-4xl sm:text-5xl lg:text-7xl font-[font2] leading-tight text-[#041E54]/95">
+            <h1
+              ref={titleRef}
+              className="text-4xl sm:text-5xl lg:text-7xl font-[font2] leading-tight text-[#041E54]/95"
+            >
               We Focus On
             </h1>
 
@@ -48,7 +69,7 @@ const Hero = () => {
               </button>
             </a>
           </div>
-          <div className="pt-10 space-y-3 font-[font2]">
+          {/* <div className="pt-10 space-y-3 font-[font2]">
             <p className="text-lg text-slate-600 font-semibold">
               Why Campaigns Trust Us
             </p>
@@ -66,16 +87,16 @@ const Hero = () => {
                 Focus on Execution & Results
               </li>
             </ul>
-          </div>
+          </div> */}
         </div>
 
         <div className="flex justify-center flex-1 lg:justify-end">
           <div className="relative ">
             <div className="absolute inset-0 bg-primary/20 blur-3xl rounded-full "></div>
 
-            <div className="hover-3d">
+            <div ref={imageRef} className="hover-3d">
               <figure className="max-w-100 rounded-2xl">
-                <img src={imgage} alt="3D card" className="shadow-2xl" />
+                <img src={image} alt="3D card" className="shadow-2xl" />
               </figure>
               <div></div>
               <div></div>

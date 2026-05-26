@@ -1,3 +1,9 @@
+import { useEffect, useRef } from "react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
+
 const services = [
   {
     title: "Election Campaign Solutions",
@@ -26,6 +32,30 @@ const services = [
 ];
 
 const Services = () => {
+  const cardsRef = useRef([]);
+
+  useEffect(() => {
+    gsap.fromTo(
+      cardsRef.current,
+      {
+        opacity: 0,
+        y: 80,
+      },
+      {
+        opacity: 1,
+        y: 0,
+        duration: 1,
+        stagger: 0.2,
+        ease: "power3.out",
+        scrollTrigger: {
+          trigger: "#services",
+          start: "top 75%",
+          toggleActions: "play none none reverse",
+        },
+      },
+    );
+  }, []);
+
   return (
     <section className="bg-white py-12 px-6 lg:px-16" id="services">
       <div className="text-center mb-10">
@@ -42,20 +72,17 @@ const Services = () => {
         {services.map((service, index) => (
           <div
             key={index}
+            ref={(el) => (cardsRef.current[index] = el)}
             className="w-full sm:w-85 bg-gray-50 border border-gray-200 rounded-2xl shadow-md hover:shadow-xl hover:-translate-y-2 transition duration-300"
           >
             <div className="p-7 flex flex-col h-full">
-              <h2 className="text-2xl font-bold text-[#F28C00] mb-4 font-[font7] ">
+              <h2 className="text-2xl font-bold text-[#F28C00] mb-4 font-[font7]">
                 {service.title}
               </h2>
 
-              <p className="text-gray-600 leading-relaxed grow font-[font3] text-xl ">
+              <p className="text-gray-600 leading-relaxed grow font-[font3] text-xl">
                 {service.desc}
               </p>
-
-              {/* <button className="mt-6 w-fit bg-[#041E54] hover:bg-[#0A2A6B] text-white px-5 py-2 rounded-xl transition duration-300">
-                Learn More
-              </button> */}
             </div>
           </div>
         ))}
