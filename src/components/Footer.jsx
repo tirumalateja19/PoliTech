@@ -1,57 +1,51 @@
+import founderImg from "../assets/founder.PNG";
+
 const Footer = () => {
   return (
     <footer
-      className="bg-white text-black px-6 lg:px-16 pt-14 pb-6 border-t border-gray-200"
+      className="bg-gradient-to-b from-white to-[#f8fafc] px-6 lg:px-16 pt-16 pb-6 border-t border-gray-100"
       id="footer"
     >
-      <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-3 gap-14 pb-12">
-        <div className="font-serif">
-          <h1 className="text-3xl font-bold">
+      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-14 pb-14">
+        {/* COMPANY INFO */}
+        <div>
+          <h2 className="text-3xl font-bold">
             <span className="text-[#041E54]">Poli</span>
             <span className="text-[#F28C00]">Tech</span> Solutions
-          </h1>
+          </h2>
 
-          <p className="text-gray-600 mt-5 leading-relaxed">
-            PoliTech Solutions is an independent consulting platform providing
-            strategic campaign support, voter engagement solutions, and
-            political communication planning.
+          <p className="text-gray-500 mt-5 leading-relaxed text-base font-[font3] max-w-sm">
+            An independent consulting platform providing strategic campaign
+            support, voter engagement solutions, and political communication
+            planning.
           </p>
 
-          <div className="mt-8 space-y-5 font-[font4]">
-            <div>
-              <p className="text-sm text-gray-400">Email</p>
-
-              <p className="text-lg text-gray-700">
-                info@politechsolutions.com
-              </p>
-            </div>
-            <div>
-              <p className="text-sm text-gray-400">Phone</p>
-
-              <p className="text-lg text-gray-700">+91 9063222721</p>
-            </div>
-
-            <div>
-              <p className="text-sm text-gray-400">Location</p>
-
-              <p className="text-lg text-gray-700">
-                Hyderabad, Telangana, India
-              </p>
-            </div>
+          <div className="mt-8 inline-block px-4 py-2 rounded-full bg-[#041E54]/5 border border-[#041E54]/10">
+            <p className="text-sm text-[#041E54]/80 font-medium tracking-wide">
+              Strategies Today, Victory Tomorrow.
+            </p>
           </div>
         </div>
 
+        {/* QUICK LINKS */}
         <div>
-          <h2 className="text-xl font-semibold text-[#041E54] mb-5">
+          <h3 className="text-sm font-semibold text-gray-400 uppercase tracking-[4px] mb-6">
             Quick Links
-          </h2>
+          </h3>
 
-          <div className="flex flex-col gap-4 text-gray-600">
+          <div className="flex flex-col gap-4 text-gray-600 font-[font3]">
             <a
               href="#hero"
               className="hover:text-[#F28C00] transition duration-300 w-fit"
             >
               Home
+            </a>
+
+            <a
+              href="#about"
+              className="hover:text-[#F28C00] transition duration-300 w-fit"
+            >
+              About Us
             </a>
 
             <a
@@ -62,7 +56,14 @@ const Footer = () => {
             </a>
 
             <a
-              href="#footer"
+              href="#strategies"
+              className="hover:text-[#F28C00] transition duration-300 w-fit"
+            >
+              Strategies
+            </a>
+
+            <a
+              href="#contact"
               className="hover:text-[#F28C00] transition duration-300 w-fit"
             >
               Contact
@@ -70,61 +71,62 @@ const Footer = () => {
           </div>
         </div>
 
-        {/* CONTACT FORM */}
+        {/* FOUNDER SECTION */}
         <div>
-          <h2 className="text-2xl font-semibold text-[#041E54] mb-6">
-            Contact Us
-          </h2>
+          <h3 className="text-sm font-semibold text-gray-400 uppercase tracking-[4px] mb-6">
+            Founder
+          </h3>
 
-          <form className="space-y-4">
-            <input
-              type="text"
-              placeholder="Full Name"
-              className="w-full border border-gray-300 rounded-xl px-4 py-3 outline-none focus:border-[#F28C00]"
-            />
+          <div className="bg-white border border-gray-100 rounded-3xl p-6 shadow-[0_8px_40px_rgba(0,0,0,0.06)]">
+            {/* IMAGE + NAME */}
+            <div className="flex items-center gap-4">
+              <img
+                src={founderImg}
+                alt="Founder"
+                className="w-20 h-20 rounded-2xl object-cover border border-gray-200"
+              />
 
-            <input
-              type="email"
-              placeholder="Email Address"
-              className="w-full border border-gray-300 rounded-xl px-4 py-3 outline-none focus:border-[#F28C00]"
-            />
+              <div>
+                <h4 className="text-xl font-bold text-[#041E54]">
+                  Shiva Mani
+                </h4>
 
-            <input
-              type="text"
-              placeholder="Phone Number"
-              className="w-full border border-gray-300 rounded-xl px-4 py-3 outline-none focus:border-[#F28C00]"
-            />
+                <p className="text-[#F28C00] text-sm mt-1 font-medium">
+                  Founder & Strategic Consultant
+                </p>
+              </div>
+            </div>
 
-            <input
-              type="text"
-              placeholder="Organization / Party Name"
-              className="w-full border border-gray-300 rounded-xl px-4 py-3 outline-none focus:border-[#F28C00]"
-            />
+            {/* DETAILS */}
+            <div className="mt-6 space-y-5 text-sm">
+              <div>
+                <p className="text-gray-400 uppercase tracking-wide text-xs mb-2">
+                  Experience
+                </p>
 
-            <input
-              type="text"
-              placeholder="Subject"
-              className="w-full border border-gray-300 rounded-xl px-4 py-3 outline-none focus:border-[#F28C00]"
-            />
+                <p className="text-gray-600 leading-relaxed font-[font3]">
+                  2+ years in political consulting, campaign strategy,
+                  communication management, and constituency outreach.
+                </p>
+              </div>
 
-            <textarea
-              rows="4"
-              placeholder="Message"
-              className="w-full border border-gray-300 rounded-xl px-4 py-3 outline-none focus:border-[#F28C00]"
-            ></textarea>
+              <div>
+                <p className="text-gray-400 uppercase tracking-wide text-xs mb-2">
+                  Focus Areas
+                </p>
 
-            <button
-              type="submit"
-              className="bg-[#F28C00] hover:bg-orange-500 text-white px-6 py-3 rounded-xl transition duration-300 w-full"
-            >
-              Send Message
-            </button>
-          </form>
+                <p className="text-gray-600 leading-relaxed font-[font3]">
+                  Campaign planning, voter engagement, media strategy,
+                  grassroots outreach, and public communication.
+                </p>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
 
       {/* BOTTOM BAR */}
-      <div className="max-w-7xl mx-auto border-t border-gray-200 pt-5 flex flex-col lg:flex-row justify-between items-center gap-3 text-sm text-gray-500">
+      <div className="max-w-7xl mx-auto border-t border-gray-200 pt-5 flex flex-col sm:flex-row justify-between items-center gap-3 text-sm text-gray-400">
         <p>© 2026 PoliTech Solutions. All rights reserved.</p>
 
         <p className="text-center">
