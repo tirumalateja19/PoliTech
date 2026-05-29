@@ -25,51 +25,66 @@ const contactInfo = [
 const Feedback = () => {
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
+  const [formData, setFormData] = useState({
+    "full-name": "",
+    email: "",
+    phone: "",
+    organization: "",
+    subject: "",
+    message: "",
+  });
 
-  const handleSubmit = (e) => {
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
-
     setLoading(true);
 
-    // Temporary fake submit
-    setTimeout(() => {
-      setLoading(false);
+    try {
+      await fetch("/", {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: new URLSearchParams({
+          "form-name": "contact",
+          ...formData,
+        }).toString(),
+      });
       setSubmitted(true);
-    }, 1000);
+    } catch (err) {
+      alert("Something went wrong. Please try again.",err);
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
     <section
-      className="bg-gradient-to-b from-white to-[#f8fafc] py-20 px-6 lg:px-16"
+      className="bg-linear-to-b from-[#f1f5f9] to-[#e8edf5] py-20 px-6 lg:px-16"
       id="contact"
     >
       <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-14 items-center">
-        {/* LEFT SIDE */}
         <div>
           <p className="text-[#F28C00] uppercase tracking-[4px] text-xs font-semibold mb-4">
             Contact Us
           </p>
-
           <h2 className="text-4xl lg:text-5xl font-[font6] text-[#041E54] leading-tight">
-            Let&apos;s Discuss Your Campaign Strategy
+            Let's Discuss Your Campaign Strategy
           </h2>
-
           <p className="text-gray-500 mt-5 text-base lg:text-lg leading-relaxed max-w-md font-[font3]">
             Reach out for strategic political consulting, voter engagement
             planning, and campaign management solutions tailored to your goals.
           </p>
 
-          {/* CONTACT INFO */}
           <div className="mt-10 space-y-5">
             {contactInfo.map((item, i) => (
               <div key={i} className="flex items-start gap-4">
-                <div className="w-10 h-10 rounded-xl bg-[#041E54]/6 flex items-center justify-center text-[#F28C00] shrink-0 mt-0.5">
+                <div className="w-10 h-10 rounded-xl bg-[#041E54]/5 flex items-center justify-center text-[#F28C00] shrink-0 mt-0.5">
                   {item.icon}
                 </div>
-
                 <div>
                   <p className="text-xs text-gray-400 mb-0.5">{item.label}</p>
-
                   {item.href ? (
                     <a
                       href={item.href}
@@ -86,7 +101,6 @@ const Feedback = () => {
           </div>
         </div>
 
-        {/* RIGHT SIDE FORM */}
         <div className="bg-white rounded-2xl p-8 shadow-[0_8px_40px_rgba(0,0,0,0.07)] border border-gray-100">
           {submitted ? (
             <div className="flex flex-col items-center justify-center py-12 text-center gap-4">
@@ -105,18 +119,25 @@ const Feedback = () => {
                   />
                 </svg>
               </div>
-
               <h3 className="text-xl font-bold text-[#041E54] font-[font6]">
                 Message Sent!
               </h3>
-
               <p className="text-gray-500 font-[font3] text-sm max-w-xs">
-                Thank you for reaching out. We&apos;ll get back to you within 24
+                Thank you for reaching out. We'll get back to you within 24
                 hours.
               </p>
-
               <button
-                onClick={() => setSubmitted(false)}
+                onClick={() => {
+                  setSubmitted(false);
+                  setFormData({
+                    "full-name": "",
+                    email: "",
+                    phone: "",
+                    organization: "",
+                    subject: "",
+                    message: "",
+                  });
+                }}
                 className="text-[#F28C00] text-sm font-semibold hover:underline mt-2"
               >
                 Send another message
@@ -128,47 +149,76 @@ const Feedback = () => {
                 Send a Message
               </h3>
 
-              <form onSubmit={handleSubmit} className="space-y-4">
-                {[
-                  {
-                    type: "text",
-                    placeholder: "Full Name",
-                    required: true,
-                  },
-                  {
-                    type: "email",
-                    placeholder: "Email Address",
-                    required: true,
-                  },
-                  {
-                    type: "tel",
-                    placeholder: "Phone Number",
-                    required: false,
-                  },
-                  {
-                    type: "text",
-                    placeholder: "Organization / Party Name",
-                    required: false,
-                  },
-                  {
-                    type: "text",
-                    placeholder: "Subject",
-                    required: true,
-                  },
-                ].map((field, i) => (
-                  <input
-                    key={i}
-                    type={field.type}
-                    placeholder={field.placeholder}
-                    required={field.required}
-                    className="w-full border border-gray-200 bg-[#fafafa] rounded-xl px-4 py-3 text-sm outline-none focus:border-[#F28C00] focus:bg-white transition-colors duration-200 font-[font3] text-gray-700 placeholder:text-gray-400"
-                  />
-                ))}
+              {/* ✅ form-name must match the name in index.html */}
+              <form
+                name="contact"
+                method="POST"
+                onSubmit={handleSubmit}
+                className="space-y-4"
+              >
+                {/* Required hidden field for Netlify */}
+                <input type="hidden" name="form-name" value="contact" />
+
+                {/* Honeypot spam field — keep hidden */}
+                <div hidden>
+                  <input name="bot-field" />
+                </div>
+
+                <input
+                  type="text"
+                  name="full-name"
+                  placeholder="Full Name"
+                  required
+                  value={formData["full-name"]}
+                  onChange={handleChange}
+                  className="w-full border border-gray-200 bg-[#fafafa] rounded-xl px-4 py-3 text-sm outline-none focus:border-[#F28C00] focus:bg-white transition-colors duration-200 font-[font3] text-gray-700 placeholder:text-gray-400"
+                />
+
+                <input
+                  type="email"
+                  name="email"
+                  placeholder="Email Address"
+                  required
+                  value={formData.email}
+                  onChange={handleChange}
+                  className="w-full border border-gray-200 bg-[#fafafa] rounded-xl px-4 py-3 text-sm outline-none focus:border-[#F28C00] focus:bg-white transition-colors duration-200 font-[font3] text-gray-700 placeholder:text-gray-400"
+                />
+
+                <input
+                  type="tel"
+                  name="phone"
+                  placeholder="Phone Number"
+                  value={formData.phone}
+                  onChange={handleChange}
+                  className="w-full border border-gray-200 bg-[#fafafa] rounded-xl px-4 py-3 text-sm outline-none focus:border-[#F28C00] focus:bg-white transition-colors duration-200 font-[font3] text-gray-700 placeholder:text-gray-400"
+                />
+
+                <input
+                  type="text"
+                  name="organization"
+                  placeholder="Organization / Party Name"
+                  value={formData.organization}
+                  onChange={handleChange}
+                  className="w-full border border-gray-200 bg-[#fafafa] rounded-xl px-4 py-3 text-sm outline-none focus:border-[#F28C00] focus:bg-white transition-colors duration-200 font-[font3] text-gray-700 placeholder:text-gray-400"
+                />
+
+                <input
+                  type="text"
+                  name="subject"
+                  placeholder="Subject"
+                  required
+                  value={formData.subject}
+                  onChange={handleChange}
+                  className="w-full border border-gray-200 bg-[#fafafa] rounded-xl px-4 py-3 text-sm outline-none focus:border-[#F28C00] focus:bg-white transition-colors duration-200 font-[font3] text-gray-700 placeholder:text-gray-400"
+                />
 
                 <textarea
+                  name="message"
                   rows={4}
                   placeholder="Message"
                   required
+                  value={formData.message}
+                  onChange={handleChange}
                   className="w-full border border-gray-200 bg-[#fafafa] rounded-xl px-4 py-3 text-sm outline-none focus:border-[#F28C00] focus:bg-white transition-colors duration-200 font-[font3] text-gray-700 placeholder:text-gray-400 resize-none"
                 />
 
@@ -181,8 +231,8 @@ const Feedback = () => {
                     "Sending..."
                   ) : (
                     <>
-                      Send Message
-                      <ArrowRight className="w-4 h-4" />
+                      {" "}
+                      Send Message <ArrowRight className="w-4 h-4" />
                     </>
                   )}
                 </button>

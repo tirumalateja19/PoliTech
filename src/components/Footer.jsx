@@ -3,7 +3,7 @@ import founderImg from "../assets/founder.PNG";
 const Footer = () => {
   return (
     <footer
-      className="bg-gradient-to-b from-white to-[#f8fafc] px-6 lg:px-16 pt-16 pb-6 border-t border-gray-100"
+      className="bg-linear-to-b from-white to-[#f8fafc] px-6 lg:px-16 pt-16 pb-6 border-t border-gray-100"
       id="footer"
     >
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-14 pb-14">
@@ -87,9 +87,7 @@ const Footer = () => {
               />
 
               <div>
-                <h4 className="text-xl font-bold text-[#041E54]">
-                  Shiva Mani
-                </h4>
+                <h4 className="text-xl font-bold text-[#041E54]">Shiva Mani</h4>
 
                 <p className="text-[#F28C00] text-sm mt-1 font-medium">
                   Founder & Strategic Consultant
