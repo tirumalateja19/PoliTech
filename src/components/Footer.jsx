@@ -7,7 +7,6 @@ const Footer = () => {
       id="footer"
     >
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-14 pb-14">
-        {/* COMPANY INFO */}
         <div>
           <h2 className="text-3xl font-bold">
             <span className="text-[#041E54]">Poli</span>
@@ -27,7 +26,6 @@ const Footer = () => {
           </div>
         </div>
 
-        {/* QUICK LINKS */}
         <div>
           <h3 className="text-sm font-semibold text-gray-400 uppercase tracking-[4px] mb-6">
             Quick Links
@@ -71,51 +69,29 @@ const Footer = () => {
           </div>
         </div>
 
-        {/* FOUNDER SECTION */}
         <div>
           <h3 className="text-sm font-semibold text-gray-400 uppercase tracking-[4px] mb-6">
             Founder
           </h3>
 
           <div className="bg-white border border-gray-100 rounded-3xl p-6 shadow-[0_8px_40px_rgba(0,0,0,0.06)]">
-            {/* IMAGE + NAME */}
             <div className="flex items-center gap-4">
               <img
                 src={founderImg}
                 alt="Founder"
-                className="w-20 h-20 rounded-2xl object-cover border border-gray-200"
+                className="w-55 h-55 rounded-2xl ml-14 object-cover border border-gray-300"
               />
-
-              <div>
-                <h4 className="text-xl font-bold text-[#041E54]">Shiva Mani</h4>
-
-                <p className="text-[#F28C00] text-sm mt-1 font-medium">
-                  Founder & Strategic Consultant
-                </p>
-              </div>
             </div>
 
-            {/* DETAILS */}
-            <div className="mt-6 space-y-5 text-sm">
+            <div className="mt-6 space-y-5 text-sm text-center">
               <div>
-                <p className="text-gray-400 uppercase tracking-wide text-xs mb-2">
-                  Experience
-                </p>
-
-                <p className="text-gray-600 leading-relaxed font-[font3]">
-                  2+ years in political consulting, campaign strategy,
-                  communication management, and constituency outreach.
-                </p>
-              </div>
-
-              <div>
-                <p className="text-gray-400 uppercase tracking-wide text-xs mb-2">
-                  Focus Areas
-                </p>
-
-                <p className="text-gray-600 leading-relaxed font-[font3]">
-                  Campaign planning, voter engagement, media strategy,
-                  grassroots outreach, and public communication.
+                <div>
+                  <h4 className="text-xl font-bold text-[#041E54]">
+                    Shiva Mani Vallala
+                  </h4>
+                </div>
+                <p className="text-[#F28C00] text-lg mt-1 font-medium">
+                  Founder & Strategic Consultant
                 </p>
               </div>
             </div>
@@ -123,7 +99,6 @@ const Footer = () => {
         </div>
       </div>
 
-      {/* BOTTOM BAR */}
       <div className="max-w-7xl mx-auto border-t border-gray-200 pt-5 flex flex-col sm:flex-row justify-between items-center gap-3 text-sm text-gray-400">
         <p>© 2026 PoliTech Solutions. All rights reserved.</p>
 

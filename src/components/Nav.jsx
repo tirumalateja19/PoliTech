@@ -31,6 +31,12 @@ const Nav = () => {
           <div>
             <img src={PoliTech_bg} alt="3D card" className="w-22 h-16 " />
           </div>
+          <div>
+            <h2 className="text-3xl font-bold sm:ml-2">
+              <span className="text-[#041E54]">Poli</span>
+              <span className="text-[#F28C00]">Tech</span> Solutions
+            </h2>
+          </div>
 
           {/* DESKTOP MENU */}
           <div className="hidden lg:flex items-center gap-10 text-[#041E54]/95 font-[font4]">
