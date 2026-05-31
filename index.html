@@ -3,14 +3,67 @@
 
 <head>
   <meta charset="UTF-8" />
-  <link rel="icon" type="image/svg+xml" href="/PoliTech_bg.png" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <link rel="icon" type="image/jpeg" href="/logo.jpeg" />
   <link href="/src/index.css" rel="stylesheet">
-  <title>politech</title>
+
+  <!-- Search Snippet -->
+  <title>PoliTech Solutions | Political Consulting & Campaign Support</title>
+  <meta name="description"
+    content="PoliTech Solutions is a political consulting and campaign support platform providing strategic solutions for individual candidates & leaders. Based in Hyderabad, Telangana, India." />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://www.politechsolutions.com" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="PoliTech Solutions | Political Consulting & Campaign Support" />
+  <meta property="og:description"
+    content="Strategic political consulting and campaign support solutions for individual candidates & leaders." />
+  <meta property="og:url" content="https://www.politechsolutions.com" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://www.politechsolutions.com/og-image.png" />
+  <meta property="og:locale" content="en_IN" />
+
+  <!-- Rich Results Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    "name": "PoliTech Solutions",
+    "url": "https://www.politechsolutions.com",
+    "logo": "https://www.politechsolutions.com/logo.jpeg",
+    "description": "Political consulting and campaign support platform providing strategic solutions for individual candidates & leaders.",
+    "telephone": "+91-9063222721",
+    "email": "info@politechsolutions.com",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Hyderabad",
+      "addressRegion": "Telangana",
+      "addressCountry": "IN"
+    },
+    "founder": {
+      "@type": "Person",
+      "name": "Shiva Mani Vallala",
+      "jobTitle": "Founder & Strategic Consultant"
+    },
+    "areaServed": "IN",
+    "serviceType": [
+      "Election Campaign Solutions",
+      "Voter Intelligence & Research",
+      "Digital Campaign Solutions",
+      "Public Engagement Solutions",
+      "Communication & PR Solutions",
+      "Campaign Management Support"
+    ],
+    "slogan": "Strategies Today, Victory Tomorrow"
+  }
+  </script>
 </head>
 
 <body>
   <div id="root"></div>
+
+  <!-- Netlify Forms -->
   <form name="contact" netlify netlify-honeypot="bot-field" hidden>
     <input type="text" name="full-name" />
     <input type="email" name="email" />
@@ -19,6 +72,7 @@
     <input type="text" name="subject" />
     <textarea name="message"></textarea>
   </form>
+
   <script type="module" src="/src/main.jsx"></script>
 </body>
 
